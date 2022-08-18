@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="A" type="text">
+   <button onclick="getTest()">확인</button> 
+   <!--select box-->
+   <select id="menu">
+   <option value="돈까스">돈까스</option>
+   <option value="치즈라면">치즈라면</option>
+   <option value="볶음밥">볶음밥</option>
+   <option value="함박스테이크">함박스테이크</option>
+    </select>
+    <!--radio button 다중선택을 피하기 위해 name의 이름을 똑같이 만든다.-->
+    SKT : <input type="radio" name="phone" value="SKT">
+    LG :  <input type="radio" name="phone" value="LG">
+    KT :  <input type="radio" name="phone" value="KT">
+    <!--textarea-->
+    <textarea id="board" cons="30" rows="10"></textarea>
+    <!--문제1 SKT를 선택하면 SKT고객이군요! 라는 문구출력-->
+    <button onclick="setTest()">통신사확인</button>
+    <!--문제2 메뉴에서 볶음밥을 선택했으면 볶음밥을 선택했군요 출력-->
+    <button onclick="etTest()">메뉴확인</button>
+
+</body>
+<script>
+    function getTest(){
+        var data = document.getElementById("A").value;
+    console.log(data);
+        //문제1. input에 입력된 값을 출력하시오.
+        var menu=document.getElementById('menu').value;
+        console.log(menu);
+        //자바스크립트로 라디오버튼 값 가져오는 방법
+        var phone =document.querySelector('input[name=phone]:checked').value;
+        console.log(phone);
+        var board = document.getElementById("board").value;
+        console.log(board);
+        }
+        
+        function setTest(){
+        var phone =document.querySelector('input[name=phone]:checked').value;
+        console.log(phone);
+        if(phone=="SKT")
+        console.log("SKT고객이군요!"); 
+        }
+        
+        function etTest(){
+        var menu = document.getElementById("menu").value;
+        console.log(menu);   
+        if(menu =="볶음밥")
+        console.log("볶음밥을 선택했군요!"); 
+        }
+      
+    
+</script>
+</html>
